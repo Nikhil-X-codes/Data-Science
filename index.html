@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI & Data Science Learning Path</title>
+
+<style>
+
+:root{
+--bg:#f4f6fb;
+--card:#ffffff;
+--text:#1f2937;
+--accent:#6366f1;
+}
+
+body.dark{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#e5e7eb;
+--accent:#818cf8;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+}
+
+h1{
+margin:0;
+font-size:26px;
+}
+
+button{
+padding:8px 14px;
+border:none;
+border-radius:8px;
+background:var(--accent);
+color:white;
+cursor:pointer;
+}
+
+.timeline{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+position:relative;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:4px;
+background:var(--accent);
+animation:grow 2s ease forwards;
+}
+
+@keyframes grow{
+from{height:0}
+to{height:100%}
+}
+
+.step{
+position:relative;
+width:50%;
+padding:20px 30px;
+box-sizing:border-box;
+}
+
+.step:nth-child(odd){
+left:0;
+text-align:right;
+}
+
+.step:nth-child(even){
+left:50%;
+}
+
+.card{
+background:var(--card);
+padding:20px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.circle{
+position:absolute;
+top:28px;
+width:16px;
+height:16px;
+border-radius:50%;
+background:var(--accent);
+}
+
+.step:nth-child(odd) .circle{
+right:-8px;
+}
+
+.step:nth-child(even) .circle{
+left:-8px;
+}
+
+.card h3{
+margin-top:0;
+}
+
+.content{
+display:none;
+font-size:14px;
+margin-top:10px;
+line-height:1.5;
+}
+
+.card.active .content{
+display:block;
+}
+
+@media(max-width:768px){
+
+.timeline::before{
+left:20px;
+}
+
+.step{
+width:100%;
+left:0 !important;
+padding-left:50px;
+text-align:left !important;
+}
+
+.step .circle{
+left:12px !important;
+right:auto;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AI & Data Science Learning Path</h1>
+<button onclick="toggleDark()">Toggle Dark Mode</button>
+</header>
+
+<div class="timeline">
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Python for Data Science</h3>
+<div class="content">Python is widely used for data analysis and machine learning because it is simple and supported by powerful libraries for working with data.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Advanced Data Handling</h3>
+<div class="content">Working with libraries and techniques that help clean, transform, and prepare datasets before building machine learning models.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Databases & SQL</h3>
+<div class="content">SQL is used to store, manage, and retrieve structured data from databases so it can be analyzed efficiently.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Machine Learning</h3>
+<div class="content">Algorithms learn patterns from data and make predictions such as classification, clustering, and regression.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Real-World Case Applications</h3>
+<div class="content">Applying AI and data science techniques to solve real problems like recognition systems, forecasting, and detection tasks.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Deep Learning & Neural Networks</h3>
+<div class="content">Neural networks process complex patterns in images, audio, and large datasets to build intelligent systems.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>NLP & Computer Vision</h3>
+<div class="content">NLP helps machines understand language while computer vision enables machines to analyze images and videos.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Generative AI & Large Language Models</h3>
+<div class="content">AI models capable of generating text, images, and code by learning patterns from large datasets.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Prompt Engineering</h3>
+<div class="content">Designing effective prompts to guide AI models in producing accurate and meaningful outputs.</div>
+</div>
+</div>
+
+<div class="step">
+<div class="circle"></div>
+<div class="card" onclick="toggleCard(this)">
+<h3>Agentic AI</h3>
+<div class="content">Autonomous AI systems that can plan tasks, use tools, and make decisions to accomplish goals.</div>
+</div>
+</div>
+
+</div>
+
+<script>
+
+function toggleCard(card){
+card.classList.toggle("active")
+}
+
+function toggleDark(){
+document.body.classList.toggle("dark")
+}
+
+</script>
+
+</body>
+</html>
